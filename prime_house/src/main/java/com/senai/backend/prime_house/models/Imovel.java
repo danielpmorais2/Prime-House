@@ -1,61 +1,85 @@
-package main.java.com.senai.backend.prime_house.models;
+package com.senai.backend.prime_house.models;
 
 import jakarta.persistence.Table;
 
-import java.time.LocalDate;
-
-import javax.annotation.processing.GeneratedValue;
-
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 @Entity
 @Table(name= "imovel")
 
 public class Imovel {
   @Id
-  @GeneratedValue(strategy=GenerationType.IDENTIFY)
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
   @Column (name="id")
   private Integer Id;
   @Column (name = "imovel")
   private String imovel;
 
-  @Column (name="data_nascimento")
-  private LocalDate id_imovel;
+  @Column(name = "valor")
+  private double valor_Imovel;
 
-  public imovel() {
-  }
+@OneToOne
+  @JoinColumn (name="id_imovel")
+  private List<Cliente> id_Imovel;
+  @OneToMany
+  @JoinColumn(name = "vendas")
+  private List<Venda> vendas;
 
-  public imovel(Integer id, String nome, LocalDate id_Imovel) {
-    Id = id;
-    this.nome = nome;
-    this.id_Imovel = id_imovel;
-  }
+public Imovel() {
+}
 
-  public Integer getId() {
-    return Id;
-  }
+public Imovel(Integer id, String imovel, double valor_Imovel, List<Cliente> id_Imovel) {
+  Id = id;
+  this.imovel = imovel;
+  this.valor_Imovel = valor_Imovel;
+  this.id_Imovel = id_Imovel;
+}
 
-  public void setId(Integer id) {
-    Id = id;
-  }
+public Integer getId() {
+  return Id;
+}
 
-  public String getNome() {
-    return nome;
-  }
+public void setId(Integer id) {
+  Id = id;
+}
 
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
+public String getImovel() {
+  return imovel;
+}
 
-  public LocalDate getid_Imovel() {
-    return id_Imovel;
-  }
+public void setImovel(String imovel) {
+  this.imovel = imovel;
+}
 
-  public void setid_Imovel(LocalDate id_Imovel) {
-    this.id_Imovel = id_Imovel;
-  }
+public double getValor_Imovel() {
+  return valor_Imovel;
+}
+
+public void setValor_Imovel(double valor_Imovel) {
+  this.valor_Imovel = valor_Imovel;
+}
+
+public List<Cliente> getId_Imovel() {
+  return id_Imovel;
+}
+
+public void setId_Imovel(List<Cliente> id_Imovel) {
+  this.id_Imovel = id_Imovel;
+}
+
+
+  
+
+
+  
   
   
 }

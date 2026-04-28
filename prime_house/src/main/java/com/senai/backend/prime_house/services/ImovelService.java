@@ -11,30 +11,28 @@ import com.senai.backend.prime_house.repositories.ImovelRepository;
 
 @Service
 public class ImovelService {
-    private final ClienteRepository clienteRepository;
     @Autowired
-    private ImovelRepository ImovelRepository;
-    ImovelService(ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
-    }
+    
+    private ImovelRepository imovelRepository;
+
     public Long contarImovel(){
-        return ImovelRepository.count();
+        return imovelRepository.count();
     }
     public Imovel buscarImovel(Integer id){
-        return ImovelRepository.findById(id).get();
+        return imovelRepository.findById(id).get();
     }
     public List <Imovel> listarImovel(){
-        return ImovelRepository.findAll();
+        return imovelRepository.findAll();
     }
     public Boolean deletarImovel(Integer id){
-        if (ImovelRepository.existsById(id)) {
-        ImovelRepository.deleteById(id);
+        if (imovelRepository.existsById(id)) {
+        imovelRepository.deleteById(id);
         return true;
         }
         return false;
     }
     public Imovel cadastrarImovel(Imovel Imovel){
-         return ImovelRepository.save(Imovel);
+         return imovelRepository.save(Imovel);
 
     }
     public Imovel atualizarImovel(Integer id, Imovel Imovel){
@@ -51,7 +49,7 @@ public class ImovelService {
         if(imovelRecuperado!= null){
             imovelRecuperado.setValor_Imovel(imovelRecuperado.getValor_Imovel());
         }
-        
+
         
         
         return null;

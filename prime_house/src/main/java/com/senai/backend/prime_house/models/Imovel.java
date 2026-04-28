@@ -32,48 +32,46 @@ public class Imovel {
   @OneToMany
   @JoinColumn(name = "vendas")
   private List<Venda> vendas;
+  public Imovel() {
+  }
+  public Imovel(Integer id, String imovel, double valor_Imovel, List<Cliente> id_Imovel, List<Venda> vendas) {
+    Id = id;
+    this.imovel = imovel;
+    this.valor_Imovel = valor_Imovel;
+    this.id_Imovel = id_Imovel;
+    this.vendas = vendas;
+  }
+  public Integer getId() {
+    return Id;
+  }
+  public void setId(Integer id) {
+    Id = id;
+  }
+  public String getImovel() {
+    return imovel;
+  }
+  public void setImovel(String imovel) {
+    this.imovel = imovel;
+  }
+  public double getValor_Imovel() {
+    return valor_Imovel;
+  }
+  public void setValor_Imovel(double valor_Imovel) {
+    this.valor_Imovel = valor_Imovel;
+  }
+  public List<Cliente> getId_Imovel() {
+    return id_Imovel;
+  }
+  public void setId_Imovel(List<Cliente> id_Imovel) {
+    this.id_Imovel = id_Imovel;
+  }
+  public List<Venda> getVendas() {
+    return vendas;
+  }
+  public void setVendas(List<Venda> vendas) {
+    this.vendas = vendas;
+  }
 
-public Imovel() {
-}
-
-public Imovel(Integer id, String imovel, double valor_Imovel, List<Cliente> id_Imovel) {
-  Id = id;
-  this.imovel = imovel;
-  this.valor_Imovel = valor_Imovel;
-  this.id_Imovel = id_Imovel;
-}
-
-public Integer getId() {
-  return Id;
-}
-
-public void setId(Integer id) {
-  Id = id;
-}
-
-public String getImovel() {
-  return imovel;
-}
-
-public void setImovel(String imovel) {
-  this.imovel = imovel;
-}
-
-public double getValor_Imovel() {
-  return valor_Imovel;
-}
-
-public void setValor_Imovel(double valor_Imovel) {
-  this.valor_Imovel = valor_Imovel;
-}
-
-public List<Cliente> getId_Imovel() {
-  return id_Imovel;
-}
-
-public void setId_Imovel(List<Cliente> id_Imovel) {
-  this.id_Imovel = id_Imovel;
-}
 
 
   

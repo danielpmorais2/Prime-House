@@ -10,8 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
+
 @Entity
 @Table(name= "imovel")
 
@@ -26,20 +26,18 @@ public class Imovel {
   @Column(name = "valor")
   private double valor_Imovel;
 
-@OneToOne
+@ManyToOne
   @JoinColumn (name="id_imovel")
   private List<Cliente> id_Imovel;
-  @OneToMany
-  @JoinColumn(name = "vendas")
-  private List<Venda> vendas;
+
   public Imovel() {
   }
-  public Imovel(Integer id, String imovel, double valor_Imovel, List<Cliente> id_Imovel, List<Venda> vendas) {
+  public Imovel(Integer id, String imovel, double valor_Imovel, List<Cliente> id_Imovel) {
     Id = id;
     this.imovel = imovel;
     this.valor_Imovel = valor_Imovel;
     this.id_Imovel = id_Imovel;
-    this.vendas = vendas;
+    
   }
   public Integer getId() {
     return Id;
@@ -65,12 +63,8 @@ public class Imovel {
   public void setId_Imovel(List<Cliente> id_Imovel) {
     this.id_Imovel = id_Imovel;
   }
-  public List<Venda> getVendas() {
-    return vendas;
-  }
-  public void setVendas(List<Venda> vendas) {
-    this.vendas = vendas;
-  }
+  
+  
 
 
 

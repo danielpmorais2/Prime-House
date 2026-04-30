@@ -1,6 +1,6 @@
 package com.senai.backend.prime_house.services;
 
-import com.senai.backend.prime_house.repositories.ClienteRepository;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +11,8 @@ import com.senai.backend.prime_house.repositories.ImovelRepository;
 
 @Service
 public class ImovelService {
-    @Autowired
     
+    @Autowired
     private ImovelRepository imovelRepository;
 
     public Long contarImovel(){
@@ -35,27 +35,7 @@ public class ImovelService {
          return imovelRepository.save(Imovel);
 
     }
-    public Imovel atualizarImovel(Integer id, Imovel Imovel){
-        Imovel imovelRecuperado= buscarImovel(id);
-        if (imovelRecuperado !=null) {
-            imovelRecuperado.setId(id);
-        }
-
-        if (imovelRecuperado!=null) {
-            imovelRecuperado.setImovel().(imovelRecuperado.getImovel());
-        }
-
-        
-        if(imovelRecuperado!= null){
-            imovelRecuperado.setValor_Imovel(imovelRecuperado.getValor_Imovel());
-        }
-
-        
-        
-        return null;
-
-        
-    }
+    
 }
 
 

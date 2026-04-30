@@ -1,4 +1,5 @@
-package com.senai.backend.prime_house.services;
+
+    public Corretor atualpackage com.senai.backend.prime_house.services;
 
 import java.util.List;
 
@@ -31,8 +32,7 @@ public class CorretorService {
     public Corretor cadastrarcorretor(Corretor corretor){
          return corretorRepository.save(corretor);
 
-    }
-    public Corretor atualizarcorretor(Integer id, Corretor corretor){
+    }izarcorretor(Integer id, Corretor corretor){
         Corretor corretorRecuperado= buscarcorretor(id);
         if (corretorRecuperado !=null) {
             corretorRecuperado.setId(id);

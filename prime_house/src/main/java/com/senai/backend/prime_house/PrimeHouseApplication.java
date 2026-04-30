@@ -9,5 +9,6 @@ public class PrimeHouseApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PrimeHouseApplication.class, args);
 	}
+	
 
 }

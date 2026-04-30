@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.senai.backend.prime_house.models.Imovel;
 import com.senai.backend.prime_house.services.ImovelService;
 
-@RequestMapping("/imoveus/")
+@RequestMapping("/imoveis/")
 @RestController
 public class ImovelController {
     @Autowired
@@ -19,12 +19,12 @@ public class ImovelController {
 
 
 
-    @GetMapping("/contar-imovels/")
+    @GetMapping("/contar-imovel/")
     public Long contarimovel(){ return imovelService.contarImovel();
 
 
     }
-    @GetMapping("/buscar-imovels/(id)")
+    @GetMapping("/buscar-imovel/(id)")
     public  Imovel buscarimovel(@PathVariable Integer id){
         return imovelService.buscarImovel(id);
     }
